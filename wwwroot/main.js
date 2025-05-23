@@ -1,5 +1,7 @@
 import { initViewer, loadModel } from './viewer.js';
 import { initTree } from './sidebar.js';
+import { loadProjects } from './projects.js';
+
 
 const login = document.getElementById('login');
 try {
@@ -17,8 +19,9 @@ try {
                 document.body.removeChild(iframe);
             };
         }
-        const viewer = await initViewer(document.getElementById('preview'));
-        initTree('#tree', (id) => loadModel(viewer, window.btoa(id).replace(/=/g, '')));
+
+        await loadProjects();
+
     } else {
         login.innerText = 'Login';
         login.onclick = () => window.location.replace('/api/auth/login');

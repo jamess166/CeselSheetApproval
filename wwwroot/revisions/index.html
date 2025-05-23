@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Revisiones del Proyecto</title>
+  <link rel="stylesheet" href="/main.css" />
+  <style>
+    #main-content {
+      position: absolute;
+      top: 3em;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 1em 0 0.5em 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3f3f3;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <img class="logo" src="https://cdn.autodesk.io/logo/black/stacked.png" alt="Autodesk Platform Services">
+    <span class="title">Revisiones del Proyecto</span>
+    <button id="login" style="visibility: hidden;">Login</button>
+  </div>
+
+  <div id="main-content">
+    <h1>Revisiones</h1>
+    <div id="projectInfo"></div>
+
+    <table id="revisionsTable">
+      <thead>
+        <tr>
+          <th>Estado</th>
+          <th>ID</th>
+          <th>Nombre Revisión</th>
+          <th>Iniciado por</th>
+          <th>Creado en</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Revisiones serán insertadas aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-async function getAccessToken(callback) {
+export async function getAccessToken(callback) {
     try {
         const resp = await fetch('/api/auth/token');
         if (!resp.ok)

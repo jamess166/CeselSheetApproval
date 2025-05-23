@@ -104,3 +104,19 @@ service.getUserProjects = async (accessToken) => {
     return allProjects;
 };
 
+service.getRevisions = async (projectId, accessToken) => {
+    console.log('Obteniendo revisiones para el proyecto:', projectId);
+    const response = await fetch(`https://developer.api.autodesk.com/construction/admin/v1/projects/${projectId}/reviews`, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+    });
+    
+    console.log('Respuesta de Get Revision:', response);
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(`Error al obtener revisiones: ${JSON.stringify(error)}`);
+    }
+
+    const data = await response.json();
+    return data.results || [];
+};
